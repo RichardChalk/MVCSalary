@@ -81,5 +81,39 @@ namespace MVCSalaryTests.Services
             Assert.AreEqual(expected, result);
         }
 
+        [TestMethod]
+        public void Between30_50_Richard_Should_Get_132kr_Per_Hour()
+        {
+            // ARRANGE
+            var empName = "Richard";
+            var empAge = 35;
+            var empHours = 10;
+            var expected = 1320;
+
+            // ACT
+            var result = sut.Calculate(empName, empAge, empHours);
+
+            // ASSERT
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void Over50_Richard_Should_Get_143kr_Per_Hour()
+        {
+            // ARRANGE
+            var empName = "Richard";
+            var empAge = 56;
+            var empHours = 10;
+            var expected = 1430;
+
+            // ACT
+            var result = sut.Calculate(empName, empAge, empHours);
+
+            // ASSERT
+            Assert.AreEqual(expected, result);
+        }
+
+
+
     }
 }
